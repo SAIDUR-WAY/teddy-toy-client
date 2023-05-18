@@ -9,7 +9,7 @@ import { FcGoogle } from 'react-icons/fc';
 const Register = () => {
      const [error, setError]= useState('')
 
-     const {createUser} = useContext(authContext);
+     const {createUser, profileUpdate} = useContext(authContext);
      // console.log(createUser)
 
      const handleSubmit = event =>{
@@ -25,8 +25,9 @@ const Register = () => {
 
           createUser(email, password)
           .then(result =>{
-               const userLogin = result.user;
-               console.log(userLogin)
+               const userloged = result.user;
+               console.log(userloged)
+               profileUpdate(userloged, name, url)
                toast.success('Successful Register')
           })
           .catch(error =>{

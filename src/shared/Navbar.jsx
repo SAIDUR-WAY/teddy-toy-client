@@ -1,22 +1,34 @@
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { authContext } from '../provider/AuthProvider'
 
 const Navbar = () => {
+     const [userName, setUserName] = useState(false)
+  const { user, logOut } = useContext(authContext)
+//   console.log(user?.photoURL)
+
   const navItems = (
     <>
       <li>
-        <Link to='/'>Home</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to='/allToys'>All Toys</Link>
+        <Link to="/allToys">All Toys</Link>
       </li>
       <li>
-        <Link to='/blogs'>Blog</Link>
+        <Link to="/blogs">Blog</Link>
       </li>
       <li>
-        <Link to='/myToys'>My Toys</Link>
+        <Link to="/myToys">My Toys</Link>
       </li>
       <li>
-        <Link to='/addToys'>Add Toys</Link>
+        <Link to="/addToys">Add Toys</Link>
+      </li>
+
+      <li>
+        <Link className="text-info font-bold" to="/register">
+          REGISTER
+        </Link>
       </li>
     </>
   )
@@ -54,16 +66,32 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-2 space-x-8">{navItems}</ul>
         </div>
         <div className="navbar-end">
-          <div className='md:mr-8 '>
-               <button className='btn btn-sm btn-outline btn-info'><Link to='/login'>Login</Link></button>
-               <button className='btn btn-sm btn-outline btn-info'><Link to='/register'>Register</Link></button>
-               
-          </div>
-          {/* <p>Profile Name</p> */}
-          <div className="avatar online">
-            <div className="w-12 rounded-full">
-              <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-            </div>
+          <div className="md:mr-8 ">
+            {!user ? (
+              <button className="btn btn-sm btn-outline btn-info">
+                <Link to="/login">Login</Link>
+              </button>
+            ) : (
+              <div className="flex items-center relative">
+                <button
+                  onClick={logOut}
+                  className="btn btn-sm btn-outline btn-info mr-8"
+                >
+                  <Link>LogOut</Link>
+                </button>
+
+
+                <span className={userName? 'showName': 'hidden'}><span className='bg-black text-white uppercase py-2 px-4 rounded'>{user?.displayName}</span></span>
+                <div
+                onMouseEnter={()=> setUserName(true)}
+                onMouseLeave={()=> setUserName(false)}
+                className="avatar online">
+                  <div className="w-12 rounded-full">
+                    <img src={user && user?.photoURL} />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
