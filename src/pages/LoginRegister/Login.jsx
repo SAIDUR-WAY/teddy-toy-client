@@ -13,7 +13,7 @@ const Login = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen my-5">
       <div className="md:w-1/2 mx-auto text-center">
         <img className="w-32 mx-auto" src={teddy} alt="" />
         <h2 className="text-2xl ">TeddyWorld</h2>
@@ -52,15 +52,14 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn border-none bg-sky-500 hover:bg-sky-700 ">Login</button>
                 <div className="divider py-4">OR</div>
                 <div className="text-center  ">
                   <FcGoogle className="text-3xl text-center mx-auto rounded-full hover:outline outline-info transition-all" />
                 </div>
               </div>
               <p className="pt-4">
-                Have an Account:{' '}
-                <Link className="underline decoration-sky-500 text-blue-600 hover:text-blue-900 font-bold">
+                Have an Account:  <Link to='/register' className="underline decoration-sky-500 text-blue-600 hover:text-blue-900 font-bold">
                   Register
                 </Link>
               </p>
