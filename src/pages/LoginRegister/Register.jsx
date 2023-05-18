@@ -1,7 +1,16 @@
 import { Link } from 'react-router-dom';
 import teddy from '../../assets/teddy.png'
+import { useContext, useState } from 'react';
+import { authContext } from '../../provider/AuthProvider';
+import { toast } from 'react-hot-toast';
+import { FcGoogle } from 'react-icons/fc';
+
 
 const Register = () => {
+     const [error, setError]= useState('')
+
+     const {createUser} = useContext(authContext);
+     // console.log(createUser)
 
      const handleSubmit = event =>{
           event.preventDefault()
@@ -13,6 +22,17 @@ const Register = () => {
           const confirm = form.confirm.value;
           const url = form.url.value;
           console.log(name, email, password, confirm, url)
+
+          createUser(email, password)
+          .then(result =>{
+               const userLogin = result.user;
+               console.log(userLogin)
+               toast.success('Successful Register')
+          })
+          .catch(error =>{
+               console.log(error.message)
+               setError(error.message)
+          })
      }
 
      return (
@@ -38,14 +58,14 @@ const Register = () => {
           <label className="label">
             <span className="label-text text-base">Email</span>
           </label>
-          <input type="text" name='email' placeholder="email" className="input input-bordered" />
+          <input type="text" name='email' placeholder="email" required className="input input-bordered" />
         </div>
           </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text text-base">Password</span>
           </label>
-          <input type="text" name='password' placeholder="password" className="input input-bordered" />
+          <input type="password" name='password' placeholder="password" required className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
@@ -59,9 +79,15 @@ const Register = () => {
           </label>
           <input type="url" name='url' placeholder="URL" className="input input-bordered" />
         </div>
+        <p className='text-red-600 font-semibold'>{error}</p>
         <div className="form-control mt-6">
           <button className="btn border-none bg-sky-500 hover:bg-sky-700 ">Register</button>
+          <div className="divider py-4">OR</div>
+                <div className="text-center  ">
+                  <FcGoogle className="text-3xl text-center mx-auto rounded-full hover:outline outline-info transition-all" />
+                </div>
         </div>
+        
         <p className="pt-4">
                 Have an Account:  <Link to='/login' className="underline decoration-sky-500 text-blue-600 hover:text-blue-900 font-bold">
                   Login

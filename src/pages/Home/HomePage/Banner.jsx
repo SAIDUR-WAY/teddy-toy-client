@@ -1,4 +1,4 @@
-import teddycover from '../../../assets/teddyCover.jpg'
+
 const Banner = () => {
   return (
     <div className='mb-10'>

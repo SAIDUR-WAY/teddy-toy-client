@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom'
 import teddy from '../../assets/teddy.png'
 import { FcGoogle } from 'react-icons/fc'
+import { useContext } from 'react'
+import { authContext } from '../../provider/AuthProvider'
 
 const Login = () => {
+     const {user} = useContext(authContext)
+     console.log(user)
   const handleSubmit = (event) => {
     event.preventDefault()
 
