@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
 import teddy from '../../assets/teddy.png'
 import { FcGoogle } from 'react-icons/fc'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { authContext } from '../../provider/AuthProvider'
+import { toast } from 'react-hot-toast'
 
 const Login = () => {
-     const {user} = useContext(authContext)
-     console.log(user)
+     const [error, setError] = useState('')
+
+     const {loginIn} = useContext(authContext)
+     // console.log(user)
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -14,6 +17,17 @@ const Login = () => {
     const email = form.email.value
     const password = form.password.value
     console.log(email, password)
+
+    //fireBase login system 
+    loginIn(email, password)
+    .then(result=>{
+     const logedUser = result.user;
+     console.log(logedUser)
+     toast.success('LogIn Successful')
+    })
+    .catch(error=>{
+     setError(error.message)
+    })
   }
 
   return (
@@ -55,6 +69,7 @@ const Login = () => {
                   </a>
                 </label>
               </div>
+              <p className='text-red-600 font-semibold'>{error}</p>
               <div className="form-control mt-6">
                 <button className="btn border-none bg-sky-500 hover:bg-sky-700 ">Login</button>
                 <div className="divider py-4">OR</div>
