@@ -1,4 +1,4 @@
-import {  FaFacebook, FaFacebookSquare, FaInstagram, FaTwitter } from 'react-icons/fa';
+import {  FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
      return (
           <footer className="footer p-10 bg-base-200 text-base-content">
