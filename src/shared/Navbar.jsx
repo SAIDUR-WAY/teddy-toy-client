@@ -72,7 +72,7 @@ const Navbar = () => {
                 <Link to="/login">Login</Link>
               </button>
             ) : (
-              <div className="flex items-center relative">
+              <div className="flex items-center relative ">
                 <button
                   onClick={logOut}
                   className="btn btn-sm btn-outline btn-info mr-8"
@@ -81,13 +81,13 @@ const Navbar = () => {
                 </button>
 
 
-                <span className={userName? 'showName': 'hidden'}><span className='bg-black text-white uppercase py-2 px-4 rounded'>{user?.displayName}</span></span>
+                <span className={userName? 'showName': 'hidden'}><span className='bg-black  text-white uppercase py-2 px-4 rounded'>{user?.displayName}</span></span>
                 <div
                 onMouseEnter={()=> setUserName(true)}
                 onMouseLeave={()=> setUserName(false)}
                 className="avatar online">
                   <div className="w-12 rounded-full">
-                    <img src={user && user?.photoURL} />
+                    <img width={24} height={24} src={user && user?.photoURL} />
                   </div>
                 </div>
               </div>

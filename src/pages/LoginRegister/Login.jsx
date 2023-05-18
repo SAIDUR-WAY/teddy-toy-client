@@ -8,7 +8,7 @@ import { toast } from 'react-hot-toast'
 const Login = () => {
      const [error, setError] = useState('')
 
-     const {loginIn} = useContext(authContext)
+     const {loginIn, googleSignIn} = useContext(authContext)
      // console.log(user)
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -28,6 +28,19 @@ const Login = () => {
     .catch(error=>{
      setError(error.message)
     })
+    
+  }
+
+  //
+  const handleGoogleSignIn = ()=>{
+     googleSignIn()
+     .then(result=>{
+          const loggedUser = result.user;
+          toast.success('Google signIn Success')
+     })
+     .catch(error=>{
+          setError(error.message)
+     })
   }
 
   return (
@@ -73,7 +86,7 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn border-none bg-sky-500 hover:bg-sky-700 ">Login</button>
                 <div className="divider py-4">OR</div>
-                <div className="text-center  ">
+                <div onClick={handleGoogleSignIn} className="text-center  ">
                   <FcGoogle className="text-3xl text-center mx-auto rounded-full hover:outline outline-info transition-all" />
                 </div>
               </div>
