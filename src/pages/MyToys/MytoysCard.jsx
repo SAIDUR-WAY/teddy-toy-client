@@ -1,9 +1,15 @@
+
 import { FaTrashAlt } from "react-icons/fa"
 
-const MytoysCard = ({ myProduct }) => {
-  console.log(myProduct)
-  const { sellerName, toyName, subCategory, price, email, img } =
-    myProduct || ''
+
+const MytoysCard = ({ myProduct, handleDelete}) => {
+     
+     const {_id, sellerName, toyName, subCategory, price, email, img } =
+     myProduct || ''
+     
+
+     
+
   return (
     <>
       <tr className="hover">
@@ -30,7 +36,7 @@ const MytoysCard = ({ myProduct }) => {
           <button className="btn btn-info btn-xs">Details</button>
         </th>
         <th>
-          <button className="btn btn-circle btn-outline">
+          <button onClick={()=>handleDelete(_id)} className="btn btn-circle btn-outline">
                <FaTrashAlt></FaTrashAlt>
           </button>
         </th>
