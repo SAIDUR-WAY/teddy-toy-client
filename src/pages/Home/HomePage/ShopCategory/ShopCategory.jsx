@@ -5,7 +5,7 @@ import CategoryCard from "./CategoryCard";
 
 
 const ShopCategory = () => {
-     const [categoryName, setCategoryName] = useState('Cats')
+     const [categoryName, setCategoryName] = useState('cats')
      const [categoryData, setCategoryData] = useState([])
      // console.log(categoryData)
      
@@ -19,7 +19,7 @@ const ShopCategory = () => {
      }, [categoryName])
 
 
-     const categoryTab = [ "Cats", "Dinosaur", "Horse"]
+     const categoryTab = [ "cats", "dinosaur", "horse"]
 
      return (
           <div className="my-10">
@@ -62,7 +62,7 @@ const ShopCategory = () => {
     </TabPanel>
     <TabPanel>
       <h2>Any content 3</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
       {
           categoryData.map(category => <CategoryCard
           key={category._id}

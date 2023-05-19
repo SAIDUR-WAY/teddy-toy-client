@@ -62,6 +62,7 @@ const Mytoys = () => {
         <th>toyName/subcategory</th>
         <th>sellerName/email</th>
         <th>Price</th>
+        <th>availableQuantity</th>
         
       </tr>
     </thead>
@@ -74,15 +75,7 @@ const Mytoys = () => {
           ></MytoysCard>)
      }
       
-    </tbody>
-    <tfoot>
-      <tr>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-      </tr>
-    </tfoot>
-    
+    </tbody> 
   </table>
 </div>
      );

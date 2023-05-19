@@ -4,7 +4,7 @@ import { FaTrashAlt } from "react-icons/fa"
 
 const MytoysCard = ({ myProduct, handleDelete}) => {
      
-     const {_id, sellerName, toyName, subCategory, price, email, img } =
+     const {_id, sellerName, toyName, subCategory, price, email, img, availableQuantity } =
      myProduct || ''
      
 
@@ -32,6 +32,7 @@ const MytoysCard = ({ myProduct, handleDelete}) => {
           <p className="badge badge-ghost ">{email}</p>
         </td>
         <td>{price}</td>
+        <td>{availableQuantity}</td>
         <th>
           <button className="btn btn-info btn-xs">Details</button>
         </th>
