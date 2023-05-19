@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
+import CategoryCard from "../../../categoryCard";
 
 
 const ShopCategory = () => {
-     const [categoryName, setCategoryName] = useState('')
+     const [categoryName, setCategoryName] = useState('Cats')
+     const [categoryData, setCategoryData] = useState([])
+     // console.log(categoryData)
      
+     
+     useEffect(()=>{
+          fetch(`http://localhost:5000/products/category?subcategory=${categoryName}`)
+          .then(res => res.json())
+          .then(data =>{
+               setCategoryData(data)
+          })
+     }, [categoryName])
 
 
-
-     const categoryTab = ["horse", "dinosaur", "cat"]
+     const categoryTab = [ "Cats", "Dinosaur", "Horse"]
 
      return (
           <div className="my-10">
@@ -17,23 +27,49 @@ const ShopCategory = () => {
 
                <div className="text-center py-10">
                <Tabs className=''>
-    <TabList className='flex justify-center'>
+    <TabList>
+         
           {
                categoryTab.map((ctb, index) => <Tab
                key={index}
                onClick={() => setCategoryName(ctb)}
                >{ctb}</Tab>)
           }
+          
     </TabList>
 
     <TabPanel>
-      <h2>Any content 1</h2>
+      <h2>Horse category</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {
+          categoryData.map(category => <CategoryCard
+          key={category._id}
+          category={category}
+          ></CategoryCard>)
+      }
+      </div>
     </TabPanel>
     <TabPanel>
       <h2>Any content 2</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {
+          categoryData.map(category => <CategoryCard
+          key={category._id}
+          category={category}
+          ></CategoryCard>)
+      }
+      </div>
     </TabPanel>
     <TabPanel>
       <h2>Any content 3</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {
+          categoryData.map(category => <CategoryCard
+          key={category._id}
+          category={category}
+          ></CategoryCard>)
+      }
+      </div>
     </TabPanel>
   </Tabs>
                </div>

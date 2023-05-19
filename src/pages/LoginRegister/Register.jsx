@@ -48,7 +48,7 @@ const Register = () => {
     </div>
     <div className="card flex-shrink-0 md:w-1/2  shadow-2xl bg-base-100">
       <form onSubmit={handleSubmit} className="card-body">
-          <div className='flex gap-4'>
+          <div className='md:flex gap-4'>
           <div className="form-control">
           <label className="label">
             <span className="label-text text-base">Name</span>
