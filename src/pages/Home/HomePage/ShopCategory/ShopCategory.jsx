@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
-import CategoryCard from "../../../categoryCard";
+import CategoryCard from "./CategoryCard";
 
 
 const ShopCategory = () => {

@@ -56,8 +56,8 @@ const AddToys = () => {
      }
 
   return (
-    <div className="min-h-screen bg-blue-100">
-      <h2 className="text-5xl text-center text-info">Fill the form information</h2>
+    <div className="min-h-screen bg-blue-100 my-10">
+      <h2 className="text-5xl text-center text-info pt-4">Fill the form information</h2>
       <div className="hero">
         <div className="hero-content  w-full md:w-5/6">
           <div className="card w-full shadow-2xl border border-base-300">
