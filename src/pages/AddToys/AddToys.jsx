@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { authContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const AddToys = () => {
@@ -20,24 +21,43 @@ const AddToys = () => {
           const availableQuantity = form.availableQuantity.value;
           const detailDescription = form.detailDescription.value
           const data = {
-                
                 sellerName,
                 email,
                 toyName,
                 price,
                 rating,
-                url,
+                img: url,
                 subCategory,
                 availableQuantity,
-                detailDescription
-               
-                
+                detailDescription  
           }
           console.log(data)
+          fetch('http://localhost:5000/products',{
+               method: "POST",
+               headers: {
+                    'content-type': 'application/json'
+               },
+               body: JSON.stringify(data)
+          })
+          .then(res => res.json())
+          .then(data => {
+               console.log(data)
+               if(data.insertedId){
+                    Swal.fire({
+                         position: 'top-end',
+                         icon: 'success',
+                         title: 'Your work has been saved',
+                         showConfirmButton: false,
+                         timer: 2000
+                       }) 
+               }
+          })
+
      }
 
   return (
     <div className="min-h-screen bg-blue-100">
+      <h2 className="text-5xl text-center text-info">Fill the form information</h2>
       <div className="hero">
         <div className="hero-content  w-full md:w-5/6">
           <div className="card w-full shadow-2xl border border-base-300">

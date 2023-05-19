@@ -1,5 +1,5 @@
 const CategoryCard = ({category}) => {
-     console.log(category)
+     // console.log(category)
      const {img, price , toyName, rating} = category
   return (
     
@@ -13,7 +13,7 @@ const CategoryCard = ({category}) => {
         <div className="card-body">
           <h2 className="card-title">Name: {toyName}</h2>
           <p className="text-left">Price: {price}</p>
-          <p className="text-left">Ratings: {price}</p>
+          <p className="text-left">Ratings: {rating}</p>
           <div className="card-actions justify-end">
             <button className="btn btn-info">View Details</button>
           </div>
