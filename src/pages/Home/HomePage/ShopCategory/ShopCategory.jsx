@@ -40,7 +40,7 @@ const ShopCategory = () => {
 
     <TabPanel>
       <h2>Horse category</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
       {
           categoryData.map(category => <CategoryCard
           key={category._id}

@@ -18,12 +18,17 @@ const Navbar = () => {
       <li>
         <Link to="/blogs">Blog</Link>
       </li>
-      <li>
+      {
+        user && <>
+               <li>
         <Link to="/products/mytoys">My Toys</Link>
       </li>
       <li>
         <Link to="/addtoys">Add Toys</Link>
       </li>
+        </>
+
+      }
 
       <li>
         <Link className="text-info font-bold" to="/register">

@@ -17,7 +17,8 @@ const CategoryCard = ({category}) => {
           <p className="text-left">Price: {price}</p>
           <p className="text-left">Ratings: {rating}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-info"><Link to={`/viewdetails/${_id}`}>View Details</Link></button>
+            <button className="btn btn-info btn-sm "><Link to={`/viewdetails/${_id}`}>View Details</Link></button>
+            
           </div>
         </div>
       </div>

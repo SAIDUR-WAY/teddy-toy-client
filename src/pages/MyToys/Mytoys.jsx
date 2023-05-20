@@ -68,7 +68,7 @@ const Mytoys = () => {
     </thead>
     <tbody>
      {
-          myProducts.map(myProduct => <MytoysCard
+          myProducts?.map(myProduct => <MytoysCard
           key={myProduct._id}
           myProduct={myProduct}
           handleDelete={handleDelete}

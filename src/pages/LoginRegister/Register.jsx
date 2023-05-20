@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import teddy from '../../assets/teddy.png'
 import { useContext, useState } from 'react';
 import { authContext } from '../../provider/AuthProvider';
@@ -8,6 +8,7 @@ import { FcGoogle } from 'react-icons/fc';
 
 const Register = () => {
      const [error, setError]= useState('')
+     const navigate = useNavigate();
 
      const {createUser, profileUpdate} = useContext(authContext);
      // console.log(createUser)
@@ -29,6 +30,7 @@ const Register = () => {
                console.log(userloged)
                profileUpdate(userloged, name, url)
                toast.success('Successful Register')
+               navigate('/')
           })
           .catch(error =>{
                console.log(error.message)

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import teddy from '../../assets/teddy.png'
 import { FcGoogle } from 'react-icons/fc'
 import { useContext, useState } from 'react'
@@ -7,9 +7,13 @@ import { toast } from 'react-hot-toast'
 
 const Login = () => {
      const [error, setError] = useState('')
+     const navigate = useNavigate();
+     const location = useLocation();
+     const from = location?.state?.from?.pathname || '/';
+     console.log(location);
 
-     const {loginIn, googleSignIn} = useContext(authContext)
-     // console.log(user)
+     const { loginIn, googleSignIn} = useContext(authContext)
+     
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -24,6 +28,7 @@ const Login = () => {
      const logedUser = result.user;
      console.log(logedUser)
      toast.success('LogIn Successful')
+     navigate(from , {replace: true})
     })
     .catch(error=>{
      setError(error.message)
@@ -37,6 +42,7 @@ const Login = () => {
      .then(result=>{
           const loggedUser = result.user;
           toast.success('Google signIn Success')
+          navigate(from, {replace: true})
      })
      .catch(error=>{
           setError(error.message)
