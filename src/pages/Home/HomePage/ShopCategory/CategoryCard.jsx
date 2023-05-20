@@ -1,7 +1,35 @@
-import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { authContext } from "../../../../provider/AuthProvider"
+import Swal from "sweetalert2"
 
 const CategoryCard = ({category}) => {
      // console.log(category)
+     const navigate = useNavigate()
+     const {user} = useContext(authContext);
+
+     const handleViewDetails = ()=>{
+
+      if(!user){
+        Swal.fire({
+          title: 'Do you want to login?',
+          text: "You must login to view toy details.",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate(`/viewdetails/${_id}`, {replace: true})
+          }
+        })
+      }else{
+        navigate(`/viewdetails/${_id}`, {replace: true})
+      }
+      
+     }
+
      const {_id, img, price , toyName, rating} = category
   return (
     
@@ -17,7 +45,12 @@ const CategoryCard = ({category}) => {
           <p className="text-left">Price: {price}</p>
           <p className="text-left">Ratings: {rating}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-info btn-sm "><Link to={`/viewdetails/${_id}`}>View Details</Link></button>
+            <button onClick={handleViewDetails} className="btn btn-info btn-sm ">
+              
+              View Details
+              {/* <Link to={`/viewdetails/${_id}`}>View Details</Link> */}
+              
+              </button>
             
           </div>
         </div>

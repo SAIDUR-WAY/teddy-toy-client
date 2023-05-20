@@ -10,7 +10,7 @@ const Login = () => {
      const navigate = useNavigate();
      const location = useLocation();
      const from = location?.state?.from?.pathname || '/';
-     console.log(location);
+    //  console.log(location);
 
      const { loginIn, googleSignIn} = useContext(authContext)
      
@@ -53,7 +53,7 @@ const Login = () => {
     <div className="min-h-screen my-5">
       <div className="md:w-1/2 mx-auto text-center">
         <img className="w-32 mx-auto" src={teddy} alt="" />
-        <h2 className="text-2xl ">TeddyWorld</h2>
+        <h2 className="text-2xl ">Please Login</h2>
         <p>Your Destination for Teddy Bear Delight</p>
       </div>
 

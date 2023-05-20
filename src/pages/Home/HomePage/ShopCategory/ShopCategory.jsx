@@ -11,7 +11,7 @@ const ShopCategory = () => {
      
      
      useEffect(()=>{
-          fetch(`http://localhost:5000/products/category?subcategory=${categoryName}`)
+          fetch(`https://teddy-toy-server-saidur-way.vercel.app/products/category?subcategory=${categoryName}`)
           .then(res => res.json())
           .then(data =>{
                setCategoryData(data)

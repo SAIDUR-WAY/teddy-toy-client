@@ -33,7 +33,7 @@ const Register = () => {
                navigate('/')
           })
           .catch(error =>{
-               console.log(error.message)
+              //  console.log(error.message)
                setError(error.message)
           })
      }
