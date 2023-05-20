@@ -1,5 +1,6 @@
 
 import { FaTrashAlt } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 
 const MytoysCard = ({ myProduct, handleDelete}) => {
@@ -34,7 +35,7 @@ const MytoysCard = ({ myProduct, handleDelete}) => {
         <td>{price}</td>
         <td>{availableQuantity}</td>
         <th>
-          <button className="btn btn-info btn-xs">Details</button>
+          <button className="btn btn-info btn-xs"><Link to={`/viewdetails/${_id}`}>Details</Link> </button>
         </th>
         <th>
           <button onClick={()=>handleDelete(_id)} className="btn btn-circle btn-outline">

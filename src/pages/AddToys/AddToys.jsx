@@ -1,63 +1,63 @@
-import { useContext } from "react";
-import { authContext } from "../../provider/AuthProvider";
-import Swal from "sweetalert2";
-
+import { useContext } from 'react'
+import { authContext } from '../../provider/AuthProvider'
+import Swal from 'sweetalert2'
 
 const AddToys = () => {
-     const {user} = useContext(authContext);
-     console.log(user)
+  const { user } = useContext(authContext)
+  console.log(user)
 
-     const handleAddToySubmit = event =>{
-          event.preventDefault()
+  const handleAddToySubmit = (event) => {
+    event.preventDefault()
 
-          const form = event.target;
-          const sellerName = form.sellerName.value;
-          const email = form.email.value;
-          const toyName = form.toyName.value;
-          const price = form.price.value;
-          const rating = form.rating.value;
-          const url = form.url.value;
-          const subCategory = form.subCategory.value;
-          const availableQuantity = form.availableQuantity.value;
-          const detailDescription = form.detailDescription.value
-          const data = {
-                sellerName,
-                email,
-                toyName,
-                price,
-                rating,
-                img: url,
-                subCategory,
-                availableQuantity,
-                detailDescription  
-          }
-          console.log(data)
-          fetch('http://localhost:5000/products',{
-               method: "POST",
-               headers: {
-                    'content-type': 'application/json'
-               },
-               body: JSON.stringify(data)
+    const form = event.target
+    const sellerName = form.sellerName.value
+    const email = form.email.value
+    const toyName = form.toyName.value
+    const price = form.price.value
+    const rating = form.rating.value
+    const url = form.url.value
+    const subCategory = form.subCategory.value
+    const availableQuantity = form.availableQuantity.value
+    const detailDescription = form.detailDescription.value
+    const data = {
+      sellerName,
+      email,
+      toyName,
+      price,
+      rating,
+      img: url,
+      subCategory,
+      availableQuantity,
+      detailDescription,
+    }
+    console.log(data)
+    fetch('http://localhost:5000/products', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        if (data.insertedId) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Toy has been saved',
+            showConfirmButton: false,
+            timer: 2000,
           })
-          .then(res => res.json())
-          .then(data => {
-               console.log(data)
-               if(data.insertedId){
-                    Swal.fire({
-                         position: 'top-end',
-                         icon: 'success',
-                         title: 'Toy has been saved',
-                         showConfirmButton: false,
-                         timer: 2000
-                       }) 
-               }
-          })
-
-     }
+        }
+      })
+  }
 
   return (
     <div className="min-h-screen bg-blue-100 my-10">
-      <h2 className="text-5xl text-center text-info pt-4">Fill the form information</h2>
+      <h2 className="text-5xl text-center text-info pt-4">
+        Fill the form information
+      </h2>
       <div className="hero">
         <div className="hero-content  w-full md:w-5/6">
           <div className="card w-full shadow-2xl border border-base-300">
@@ -156,7 +156,9 @@ const AddToys = () => {
                 </div>
                 <div className="form-control ">
                   <label className="label">
-                    <span className="label-text text-base">Available Quantity</span>
+                    <span className="label-text text-base">
+                      Available Quantity
+                    </span>
                   </label>
                   <input
                     type="number"
@@ -166,14 +168,19 @@ const AddToys = () => {
                     className="input input-bordered"
                   />
                 </div>
-                
               </div>
               <div className="form-control ">
-                  <label className="label">
-                    <span className="label-text text-base">Detail Description</span>
-                  </label>
-                  <textarea className="textarea textarea-info" name="detailDescription" placeholder="Bio"></textarea>
-                </div>
+                <label className="label">
+                  <span className="label-text text-base">
+                    Detail Description
+                  </span>
+                </label>
+                <textarea
+                  className="textarea textarea-info"
+                  name="detailDescription"
+                  placeholder="Bio"
+                ></textarea>
+              </div>
               <div className="form-control mt-6">
                 <button className="btn border-none bg-sky-500 hover:bg-sky-700 ">
                   Add a Toy

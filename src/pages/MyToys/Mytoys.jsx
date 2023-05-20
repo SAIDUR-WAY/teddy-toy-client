@@ -8,7 +8,7 @@ const Mytoys = () => {
      const {user} = useContext(authContext);
      const [myProducts, setMyProducts] = useState([])
      // console.log(myProducts)
-     // console.log(user)
+     console.log(user)
 
      useEffect(()=>{
           fetch(`http://localhost:5000/products/mytoys?email=${user?.email}`)

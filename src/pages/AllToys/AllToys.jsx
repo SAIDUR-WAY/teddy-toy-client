@@ -3,7 +3,7 @@ import ToysCard from './ToysCard'
 
 const AllToys = () => {
   const products = useLoaderData()
-  console.log(products)
+  // console.log(products)
   return (
     <div className="overflow-x-auto  md:w-11/12 mx-auto shadow-2xl my-10">
       <table className="table overflow-scroll w-full">

@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
+
 const CategoryCard = ({category}) => {
      // console.log(category)
-     const {img, price , toyName, rating} = category
+     const {_id, img, price , toyName, rating} = category
   return (
     
       <div className="card w-full  bg-base-100 shadow-xl border border-base-300">
@@ -15,7 +17,7 @@ const CategoryCard = ({category}) => {
           <p className="text-left">Price: {price}</p>
           <p className="text-left">Ratings: {rating}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-info">View Details</button>
+            <button className="btn btn-info"><Link to={`/viewdetails/${_id}`}>View Details</Link></button>
           </div>
         </div>
       </div>

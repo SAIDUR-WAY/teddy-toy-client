@@ -9,6 +9,7 @@ import ErrorPage from "../pages/ErrorPage";
 import AddToys from "../pages/AddToys/AddToys";
 import AllToys from "../pages/AllToys/AllToys";
 import Mytoys from "../pages/MyToys/Mytoys";
+import ViewDetails from "../pages/ViewDetails";
 
   export const router = createBrowserRouter([
      {
@@ -40,6 +41,11 @@ import Mytoys from "../pages/MyToys/Mytoys";
         {
           path: '/products/mytoys',
           element: <Mytoys></Mytoys>
+        },
+        {
+          path: '/viewDetails/:id',
+          element: <ViewDetails></ViewDetails>,
+          loader: ({params})=> fetch(`http://localhost:5000/products/${params.id}`)
         }
        ]
      },
