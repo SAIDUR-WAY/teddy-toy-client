@@ -23,11 +23,11 @@ const AddToys = () => {
       sellerName,
       email,
       toyName,
-      price,
-      rating,
+      price: +price,
+      rating: +rating,
       img: url,
       subCategory,
-      availableQuantity,
+      availableQuantity: +availableQuantity,
       detailDescription,
     }
     console.log(data)

@@ -31,7 +31,7 @@ const UpdateToy = () => {
                     Swal.fire({
                          position: 'top-end',
                          icon: 'success',
-                         title: 'Toy has been saved',
+                         title: 'Toy has been Updated',
                          showConfirmButton: false,
                          timer: 2000,
                        })
