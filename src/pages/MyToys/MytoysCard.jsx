@@ -35,7 +35,7 @@ const MytoysCard = ({ myProduct, handleDelete}) => {
         <td>{price}</td>
         <td>{availableQuantity}</td>
         <th>
-          <button className="btn btn-info btn-xs"><Link to={`/viewdetails/${_id}`}>Details</Link> </button>
+          <button className="btn btn-info btn-xs"><Link to={`/updatetoy/${_id}`} >Update</Link> </button>
         </th>
         <th>
           <button onClick={()=>handleDelete(_id)} className="btn btn-circle btn-outline">

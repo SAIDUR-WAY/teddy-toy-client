@@ -11,6 +11,7 @@ import AllToys from "../pages/AllToys/AllToys";
 import Mytoys from "../pages/MyToys/Mytoys";
 import ViewDetails from "../pages/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
+import UpdateToy from "../pages/MyToys/UpdateToy";
 
   export const router = createBrowserRouter([
      {
@@ -47,6 +48,11 @@ import PrivateRoute from "./PrivateRoute";
           path: '/viewDetails/:id',
           element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
           loader: ({params})=> fetch(`https://teddy-toy-server-saidur-way.vercel.app/products/${params.id}`)
+        },
+        {
+          path: '/updatetoy/:id',
+          element: <UpdateToy></UpdateToy>,
+          loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
         }
        ]
      },

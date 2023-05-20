@@ -112,6 +112,7 @@ const AddToys = () => {
                     type="number"
                     name="price"
                     placeholder="Price"
+                    min="0"
                     required
                     className="input input-bordered"
                   />
@@ -123,6 +124,9 @@ const AddToys = () => {
                   <input
                     type="number"
                     name="rating"
+                    min="0"
+                    max="5"
+                    
                     placeholder="Rating"
                     required
                     className="input input-bordered"
