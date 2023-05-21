@@ -25,7 +25,18 @@ const Register = () => {
           const confirm = form.confirm.value;
           const url = form.url.value;
           // console.log(name, email, password, confirm, url)
-
+          
+          //input field condition
+          if(password !== confirm){
+            setError(' Not match in password')
+            return
+       }else if(password.length < 8){
+            setError('Please minimum 6 character long')
+            return
+       }else if(!/(?=.*[A-Z])/.test(password)){
+            setError('ADD one UpperCase latter add in password')
+            return
+       }
           createUser(email, password)
           .then(result =>{
                const userloged = result.user;
@@ -57,7 +68,7 @@ const Register = () => {
           <label className="label">
             <span className="label-text text-base">Name</span>
           </label>
-          <input type="text" name='name' placeholder="email" className="input input-bordered" />
+          <input type="text" name='name' placeholder="Name" className="input input-bordered" />
         </div>
         <div className="form-control basis-full">
           <label className="label">
