@@ -91,9 +91,52 @@ const Blog = () => {
           </div>
           </div>
 
+          <div className = "my-20">
+          <h2 className="text-2xl font-semibold pb-4 ">Question:What is express js? What is Nest JS (google it)? </h2>
+               <p>ques: What is express js? </p>
+               <p className="border-2 border-l-info block p-10 ml-5"> ans:
+               Express.js is the most popular web framework for Node.js. It is designed for building web applications and APIs and has been called the de facto standard server framework for Node.js.
+
+Building a backend from-scratch for an application in Node.js can be tedious and time consuming. From setting up ports to route handlers, writing all of the boilerplate code takes away from what really matters, which is writing the business logic for an application. By using web frameworks like Express.js, developers can save time and focus on other important tasks. To learn more about Express and what it can do, visit the
+               </p>
+
+               <p className="py-5">ques: What is Nest JS? </p>
+               <p className="border-2 border-l-info block p-10 ml-5">Ans: Nest.js is one of the fastest-growing Node.js frameworks for building efficient, scalable, and enterprise-grade backend applications using Node.js. It is known for producing highly testable, maintainable, and scalable applications using modern JavaScript and TypeScript.
+                    <br />
+                    With over 46.6k stars and 5.4k forks on GitHub, and a weekly download count of up to 700,000, the framework is a popular go-to for crafting out your backend project with Node.js.
+
+Nest.js is a perfect solution for your next project if you need to build a scalable, maintainable, enterprise-level application.
+
+In the next section, we’ll explore what it is used for and different companies using the framework in production.
+               </p>
+          </div>
+
+          <div className="my-20">
+               <p className="py-5">Ques: What Is Aggregation?</p>
+               <p className="border-2 border-l-info block p-10 ml-5"> Ans:
+               At the start of this introduction, we mentioned MongoDB provides two methods to perform aggregation. The simplest is single-purpose aggregation.
+
+Single-purpose aggregation operations are a collection of helper methods applied to a collection to calculate a result. These helper methods enable simple access to common aggregation processes.
+
+
+Two of such methods provided are:
+
+Distinct()
+countDocuments()
+               </p>
+
+               <p className="py-5">Ques: How Does Aggregation Work in MongoDB?</p>
+               <p className="border-2 border-l-info block p-10 ml-5">Ans: When you need to do more complex aggregation, you can use the MongoDB aggregation pipeline (here’s a more detailed tutorial). Aggregation pipelines are collections of stages that, combined with the MongoDB query syntax, will allow you to obtain an aggregated result.
+
+Before we dive into the code, let understand what the aggregation pipeline itself does and how it works. In the aggregation pipeline, you list out a series of instructions in a stage For each stage that defined, MongoDB executes them one after another in order to give a finalized output youre able to use. Let look at an example usage of the aggregate command:
+
+               </p>
+          </div>
 
 
 
+
+          <div className="divider"></div> 
           </div>
      );
 };
