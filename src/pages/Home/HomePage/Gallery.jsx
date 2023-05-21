@@ -13,18 +13,28 @@ const Gallery = () => {
       <div className="w-1/2 p-1 md:p-2">
         <img
           alt="gallery"
+          data-aos="zoom-out-right"
+          data-aos-duration="3000"
           className="block h-full w-full rounded-lg object-cover object-center"
           src="https://i.ibb.co/9qL4vps/gallery2.jpg" />
       </div>
       <div className="w-1/2 p-1 md:p-2">
         <img
           alt="gallery"
+          data-aos="zoom-out-right"
+          data-aos-duration="2000"
+          
+          
+
           className="block h-full w-full rounded-lg object-cover object-center"
           src="https://i.ibb.co/X74jkC7/gallery3.jpg" />
       </div>
       <div className="w-full p-1 md:p-2">
         <img
           alt="gallery"
+          data-aos="fade-right"
+          data-aos-duration="2000"
+
           className="block h-full w-full rounded-lg object-cover object-center"
           src="https://i.ibb.co/DR6qJW1/gallery5.webp" />
       </div>
@@ -33,18 +43,28 @@ const Gallery = () => {
       <div className="w-full p-1 md:p-2">
         <img
           alt="gallery"
+          data-aos="zoom-in-left"
+          data-aos-duration="2000"
           className="block h-full w-full rounded-lg object-cover object-center"
           src="https://i.ibb.co/Mg9zG8s/teddy3.jpg" />
       </div>
       <div className="w-1/2 p-1 md:p-2">
         <img
           alt="gallery"
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          
           className="block h-full w-full rounded-lg object-cover object-center"
           src="https://i.ibb.co/Jv7nM6r/pngegg.png" />
       </div>
       <div className="w-1/2 p-1 md:p-2">
         <img
           alt="gallery"
+          data-aos="fade-left"
+     
+     
+     data-aos-duration="2000"
+         
           className="block h-full w-full rounded-lg object-cover object-center"
           src="https://i.ibb.co/xqw12ZY/teddy6.jpg" />
       </div>

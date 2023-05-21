@@ -36,6 +36,9 @@ const CategoryCard = ({category}) => {
       <div className="card w-full  bg-base-100 shadow-xl border border-base-300">
         <figure>
           <img
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
             src={img}
             alt="Shoes"
           />

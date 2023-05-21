@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Sponsor = () => {
   const [sopnsorLogo, setSponsorLogo] = useState([])
   useEffect(() => {
-    fetch('http://localhost:5000/news/sponsor')
+    fetch('https://teddy-toy-server-saidur-way.vercel.app/news/sponsor')
       .then((res) => res.json())
       .then((data) => {
         setSponsorLogo(data)
@@ -13,8 +13,8 @@ const Sponsor = () => {
   }, [])
   return (
      <>
-    <div className='my-20  bg-base-200  py-10'>
-     <h2 className='text-5xl font-bold text-center pb-20'>Sponsored Company</h2>
+    <div  className='my-20  bg-base-200  py-10'>
+     <h2  className='text-5xl font-bold text-center pb-20'>Sponsored Company</h2>
      
      <Marquee pauseOnHover>
       <div
