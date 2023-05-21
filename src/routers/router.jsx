@@ -52,7 +52,7 @@ import UpdateToy from "../pages/MyToys/UpdateToy";
         {
           path: '/updatetoy/:id',
           element: <UpdateToy></UpdateToy>,
-          loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+          loader: ({params}) => fetch(`https://teddy-toy-server-saidur-way.vercel.app/products/${params.id}`)
         }
        ]
      },

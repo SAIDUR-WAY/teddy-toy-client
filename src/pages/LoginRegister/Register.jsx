@@ -22,12 +22,12 @@ const Register = () => {
           const password = form.password.value;
           const confirm = form.confirm.value;
           const url = form.url.value;
-          console.log(name, email, password, confirm, url)
+          // console.log(name, email, password, confirm, url)
 
           createUser(email, password)
           .then(result =>{
                const userloged = result.user;
-               console.log(userloged)
+              //  console.log(userloged)
                profileUpdate(userloged, name, url)
                toast.success('Successful Register')
                navigate('/')

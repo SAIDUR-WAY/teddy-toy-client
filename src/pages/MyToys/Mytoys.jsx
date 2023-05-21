@@ -8,7 +8,7 @@ const Mytoys = () => {
      const {user} = useContext(authContext);
      const [myProducts, setMyProducts] = useState([])
      // console.log(myProducts)
-     console.log(user)
+     // console.log(user)
 
      useEffect(()=>{
           fetch(`https://teddy-toy-server-saidur-way.vercel.app/products/mytoys?email=${user?.email}`)
@@ -35,7 +35,7 @@ const Mytoys = () => {
                     })
                     .then(res => res.json())
                     .then(data => {
-                         console.log(data)
+                         // console.log(data)
                          if(data.deletedCount > 0){
                               Swal.fire(
                                    'Deleted!',

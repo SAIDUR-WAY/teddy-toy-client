@@ -17,7 +17,7 @@ const UpdateToy = () => {
                availableQuantity,
                detailDescription
           }
-          fetch(`http://localhost:5000/products/${_id}`, {
+          fetch(`https://teddy-toy-server-saidur-way.vercel.app/products/${_id}`, {
                method: "PATCH",
                headers: {
                     "content-type": "application/json"

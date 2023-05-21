@@ -20,13 +20,13 @@ const Login = () => {
     const form = event.target
     const email = form.email.value
     const password = form.password.value
-    console.log(email, password)
+    // console.log(email, password)
 
     //fireBase login system 
     loginIn(email, password)
     .then(result=>{
      const logedUser = result.user;
-     console.log(logedUser)
+    //  console.log(logedUser)
      toast.success('LogIn Successful')
      navigate(from , {replace: true})
     })

@@ -2,7 +2,7 @@ import { useLoaderData } from 'react-router-dom'
 
 const ViewDetails = () => {
   const toyProduct = useLoaderData()
-  console.log(toyProduct)
+  // console.log(toyProduct)
   const {_id, sellerName, toyName, rating,  price, email, img, detailDescription, availableQuantity } =
   toyProduct || ''
 

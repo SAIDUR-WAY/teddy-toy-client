@@ -30,7 +30,7 @@ const AddToys = () => {
       availableQuantity: +availableQuantity,
       detailDescription,
     }
-    console.log(data)
+    // console.log(data)
     fetch('https://teddy-toy-server-saidur-way.vercel.app/products', {
       method: 'POST',
       headers: {
@@ -40,7 +40,7 @@ const AddToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         if (data.insertedId) {
           Swal.fire({
             position: 'top-end',
