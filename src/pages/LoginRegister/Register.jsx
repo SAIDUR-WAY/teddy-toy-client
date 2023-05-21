@@ -31,7 +31,7 @@ const Register = () => {
             setError(' Not match in password')
             return
        }else if(password.length < 8){
-            setError('Please minimum 6 character long')
+            setError('Please minimum 8 character long')
             return
        }else if(!/(?=.*[A-Z])/.test(password)){
             setError('ADD one UpperCase latter add in password')
