@@ -17,6 +17,7 @@ const Register = () => {
 
      const handleSubmit = event =>{
           event.preventDefault()
+          setError('')
 
           const form = event.target;
           const name = form.name.value;

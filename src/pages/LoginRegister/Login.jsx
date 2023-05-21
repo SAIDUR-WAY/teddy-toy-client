@@ -18,6 +18,7 @@ const Login = () => {
      
   const handleSubmit = (event) => {
     event.preventDefault()
+    setError('')
 
     const form = event.target
     const email = form.email.value
@@ -79,7 +80,7 @@ const Login = () => {
                   <span className="label-text text-base">Password</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   name='password'
                   placeholder="password"
                   className="input input-bordered"
