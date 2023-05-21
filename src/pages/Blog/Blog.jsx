@@ -112,6 +112,7 @@ In the next section, we’ll explore what it is used for and different companies
           </div>
 
           <div className="my-20">
+          <h2 className="text-2xl font-semibold pb-4 ">Question:What is MongoDB aggregate and how does it work (google it)? </h2>
                <p className="py-5">Ques: What Is Aggregation?</p>
                <p className="border-2 border-l-info block p-10 ml-5"> Ans:
                At the start of this introduction, we mentioned MongoDB provides two methods to perform aggregation. The simplest is single-purpose aggregation.

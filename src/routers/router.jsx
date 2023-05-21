@@ -34,7 +34,7 @@ import Blog from "../pages/Blog/Blog";
         },
         {
           path: '/addtoys',
-          element: <AddToys></AddToys>
+          element: <PrivateRoute><AddToys></AddToys></PrivateRoute>
         },
         {
           path: '/alltoys',
@@ -43,7 +43,7 @@ import Blog from "../pages/Blog/Blog";
         },
         {
           path: '/products/mytoys',
-          element: <Mytoys></Mytoys>
+          element: <PrivateRoute><Mytoys></Mytoys></PrivateRoute>
         },
         {
           path: '/viewDetails/:id',
