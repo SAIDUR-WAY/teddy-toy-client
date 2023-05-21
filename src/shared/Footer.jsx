@@ -85,11 +85,11 @@ const Footer = () => {
     </div>
   </div>
       </footer>
-
-      <div className="w-full text-black text-center border border-b-info border-t-info h-12 flex items-center justify-evenly">
+      <div className="w-full text-black text-center font-bold border border-b-info border-t-info h-12 flex items-center justify-evenly">
         
         CopyRight @ TeddyWorld
       </div>
+
     </div>
   )
 }

@@ -23,8 +23,7 @@ const NewsUpdate = () => {
         News And Update
       </h2>
       <div className="divider"></div>
-      <div  data-aos="fade-up"
-     data-aos-duration="3000" className="carousel  rounded-box w-full mx-auto">
+      <div  className="carousel  rounded-box w-full mx-auto">
         {
           toyNews.map((tnews, index) => <NewsCard
           key={tnews._id}

@@ -6,6 +6,7 @@ const Banner = () => {
       <div
         className="hero min-h-screen rounded-b-lg  "
         data-aos="zoom-in"
+        data-aos-duration="1500"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)), url("https://i.ibb.co/rHMSHqY/teddycover3.jpg")`,
           

@@ -5,7 +5,7 @@ const ViewDetails = () => {
   const toyProduct = useLoaderData()
   // console.log(toyProduct)
   useTitle('ViewDetails')
-  const {_id, sellerName, toyName, rating,  price, email, img, detailDescription, availableQuantity } =
+  const { sellerName, toyName, rating,  price, email, img, detailDescription, availableQuantity } =
   toyProduct || ''
 
   return (

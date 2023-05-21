@@ -12,6 +12,7 @@ import Mytoys from "../pages/MyToys/Mytoys";
 import ViewDetails from "../pages/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
 import UpdateToy from "../pages/MyToys/UpdateToy";
+import Blog from "../pages/Blog/Blog";
 
   export const router = createBrowserRouter([
      {
@@ -53,6 +54,11 @@ import UpdateToy from "../pages/MyToys/UpdateToy";
           path: '/updatetoy/:id',
           element: <UpdateToy></UpdateToy>,
           loader: ({params}) => fetch(`https://teddy-toy-server-saidur-way.vercel.app/products/${params.id}`)
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
+          
         }
        ]
      },

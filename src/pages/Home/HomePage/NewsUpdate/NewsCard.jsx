@@ -8,7 +8,9 @@ const NewsCard = ({tnews, index}) => {
 
      return (
           
-               <div id= {index + 1} className="carousel-item  space-x-4">
+               <div
+
+               id= {index + 1} className="carousel-item  space-x-4">
           <div className="carousel-item">
             <div className="card w-96 bg-base-100 shadow-xl border border-base-300">
               <div className="card-body">
@@ -25,7 +27,7 @@ const NewsCard = ({tnews, index}) => {
                 </p>
               </div>
               
-                <div className="h-52 overflow-hidden">
+                <div data-aos="zoom-out" data-aos-duration="2000" className="h-52 overflow-hidden">
                     <img width={300} height={200} src={img} alt="Shoes" className=' mx-auto' /></div>
               
             </div>
