@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { authContext } from "../../provider/AuthProvider";
 import MytoysCard from "./MytoysCard";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 
 const Mytoys = () => {
@@ -9,6 +10,7 @@ const Mytoys = () => {
      const [myProducts, setMyProducts] = useState([])
      // console.log(myProducts)
      // console.log(user)
+     useTitle('MyToys')
 
      useEffect(()=>{
           fetch(`https://teddy-toy-server-saidur-way.vercel.app/products/mytoys?email=${user?.email}`)

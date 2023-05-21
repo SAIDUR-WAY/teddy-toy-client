@@ -4,9 +4,11 @@ import 'react-tabs/style/react-tabs.css';
 import CategoryCard from "./CategoryCard";
 
 
+
 const ShopCategory = () => {
      const [categoryName, setCategoryName] = useState('cats')
      const [categoryData, setCategoryData] = useState([])
+     
      // console.log(categoryData)
      
      

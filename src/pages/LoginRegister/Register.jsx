@@ -4,11 +4,13 @@ import { useContext, useState } from 'react';
 import { authContext } from '../../provider/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc';
+import useTitle from '../../hooks/useTitle';
 
 
 const Register = () => {
      const [error, setError]= useState('')
      const navigate = useNavigate();
+     useTitle('Register')
 
      const {createUser, profileUpdate} = useContext(authContext);
      // console.log(createUser)

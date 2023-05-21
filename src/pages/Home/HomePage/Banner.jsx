@@ -1,5 +1,6 @@
 
 const Banner = () => {
+  
   return (
     <div className='mb-10'>
       <div

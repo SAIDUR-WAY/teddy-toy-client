@@ -1,8 +1,10 @@
 import { useLoaderData } from 'react-router-dom'
 import ToysCard from './ToysCard'
+import useTitle from '../../hooks/useTitle'
 
 const AllToys = () => {
   const products = useLoaderData()
+  useTitle('AllToys')
   // console.log(products)
   return (
     <div className="overflow-x-auto  md:w-11/12 mx-auto shadow-2xl my-10">

@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { useContext, useState } from 'react'
 import { authContext } from '../../provider/AuthProvider'
 import { toast } from 'react-hot-toast'
+import useTitle from '../../hooks/useTitle'
 
 const Login = () => {
      const [error, setError] = useState('')
@@ -11,6 +12,7 @@ const Login = () => {
      const location = useLocation();
      const from = location?.state?.from?.pathname || '/';
     //  console.log(location);
+    useTitle('Login')
 
      const { loginIn, googleSignIn} = useContext(authContext)
      
