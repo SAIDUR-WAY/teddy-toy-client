@@ -19,7 +19,7 @@ const NewsUpdate = () => {
   return (
     <div className="my-10">
       <div className="divider"></div>
-      <h2 className="text-5xl font-bold text-center uppercase pb-8">
+      <h2 className="text-5xl font-bold text-center pb-8">
         News And Update
       </h2>
       <div className="divider"></div>
